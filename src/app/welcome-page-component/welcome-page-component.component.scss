@@ -1,0 +1,23 @@
+.welcomePage{
+  background:black;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span{
+    color:white;
+    font-size: 26px;
+}
+.animationDone{
+    display: none
+}
+button{
+    background-color: black;
+    color: white;
+    font-size: 26px;
+    border: 1px solid white;
+}
+.japan{
+    font-family: 'Noto Sans JP', sans-serif;
+}

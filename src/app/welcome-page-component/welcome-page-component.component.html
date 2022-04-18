@@ -1,0 +1,8 @@
+<div @myInsertRemoveTrigger class="welcomePage">
+    <div [@childAnimation]="texts.length" (@childAnimation.done)="animationDone()">
+        <div *ngFor="let item of texts">
+            <span [class.animationDone]="onRemove">{{ item }}</span>
+        </div>
+    </div>
+    <button class="btn btn-dark" *ngIf="onRemove" (click)="navigate()">Enter</button>
+</div>     

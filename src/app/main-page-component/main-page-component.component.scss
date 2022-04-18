@@ -1,0 +1,61 @@
+
+
+.section {
+    text-align:center;
+    font-size: 3em;
+  }
+  a{
+    font-weight: 400;
+    font-size: 16px;
+  }
+  a.active, a:hover{
+      &.nav-link{
+        text-decoration: underline;
+        text-underline-offset: 7px;
+      }
+  }
+  .navbar{
+      position: relative;
+      border-bottom: 1px solid black;
+  }
+  .navbar-brand{
+      font-size: 26px;
+  }
+  .firstSection{
+      background-image: url('../../assets/images/wedding_img_01.jpg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.8;
+      background-position: 50% 0;
+      box-shadow:inset 0 0 0 1000px rgba(23,85,114, 0.3);
+  }
+  .contentContainer{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    
+  }
+
+  @media only screen and (max-width: 600px) {
+    .firstSection{
+       background-size: cover;
+    }
+  }
+
+
+  @media only screen and (min-width: 600px) {
+    .navbar{
+       padding: 40px 80px;
+    }
+    .contentContainer{
+        h1{
+            font-size: 68px
+        }
+        h3{
+            font-size: 32px;
+        }
+    }
+  }
