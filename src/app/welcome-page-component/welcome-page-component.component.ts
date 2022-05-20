@@ -1,5 +1,6 @@
 import { animate, animateChild, keyframes, query, stagger, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,22 +32,28 @@ import { Router } from '@angular/router';
 })
 export class WelcomePageComponentComponent implements OnInit {
 
+  password = new FormControl('');
+
   constructor(private router: Router ) { }
 
   texts = ['hello', 'merhaba', 'hallo', 'こんにちは']
   backdropDisplay!: string;
   onRemove = false;
+  showError = false;
 
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   animationDone(){
     this.onRemove = true;
   }
 
   navigate(){
-    this.router.navigate(['main-page']);
+    console.log(this.password.value)
+    if(this.password.value === 'readyforaction' || this.password.value === 'hahaha'){
+      this.router.navigate(['main-page']);
+    }else{
+      this.showError = true;
+    }
   }
 
 }

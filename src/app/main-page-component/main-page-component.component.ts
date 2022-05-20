@@ -16,7 +16,6 @@ export class MainPageComponentComponent implements OnInit {
       anchors: ['home', 'info', 'reservation', 'contact'],
       menu: '#menu',
       navigation: true,
-      sectionsColor: ['#fff', '#fff', '#fff', 'whitesmoke', '#ccddff']     
     };
   }
 
@@ -28,3 +27,10 @@ export class MainPageComponentComponent implements OnInit {
   }
 
 }
+
+
+//reservation
+//isim soyisim 
+//comment
+//yemek tercihi
+//katilitp/katilmama

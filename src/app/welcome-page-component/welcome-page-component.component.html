@@ -1,8 +1,20 @@
+
 <div @myInsertRemoveTrigger class="welcomePage">
     <div [@childAnimation]="texts.length" (@childAnimation.done)="animationDone()">
         <div *ngFor="let item of texts">
             <span [class.animationDone]="onRemove">{{ item }}</span>
         </div>
     </div>
-    <button class="btn btn-dark" *ngIf="onRemove" (click)="navigate()">Enter</button>
-</div>     
+    <div *ngIf="onRemove" class="form-group ">
+        <div class="login">
+            <input type="password" class="form-control" placeholder="Enter password" [formControl]="password">
+            <button class="btn btn-dark" (click)="navigate()">Enter</button>
+        </div>
+        <span *ngIf="showError" class="error">Please enter the correct password</span>
+
+    </div>
+</div>
+
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>

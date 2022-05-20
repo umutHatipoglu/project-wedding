@@ -1,6 +1,6 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light " id="menu">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="menu">
     <div class="container-fluid">
-      <a data-menuanchor="firstPage" class="navbar-brand" href="#home">Nihal & Chris</a>
+      <a data-menuanchor="firstPage" class="navbar-brand headerLink" href="#home">Nihal & Chris</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,19 +18,18 @@
 
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" #fullpageRef>
     <div class="section firstSection">
+    </div>
+    <div class="section secondSection">
         <div class="contentContainer">
-            <h1><strong>NIHAL & CHRIS</strong></h1>
-            <h5>ARE GETTING MARRIED</h5>
-            <h3><strong>14th May, 2023 | 4:00 PM</strong></h3>
-        </div>
+          <h1><strong>NIHAL & CHRIS</strong></h1>
+          <h5>ARE GETTING MARRIED</h5>
+          <h3><strong>14th May, 2023 | 4:00 PM</strong></h3>
+      </div>
     </div>
-    <div class="section">
-        <h1>INFO</h1>
-    </div>
-    <div class="section">
+    <div class="section secondSection">
         <h1>Reservation</h1>
     </div>
-    <div class="section">
+    <div class="section secondSection">
         <h1>Contact</h1>
     </div>
   </div>

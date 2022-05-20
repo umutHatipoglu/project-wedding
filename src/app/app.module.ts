@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainPageComponentComponent } from './main-page-component/main-page-component.component';
 import { WelcomePageComponentComponent } from './welcome-page-component/welcome-page-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     AngularFullpageModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
