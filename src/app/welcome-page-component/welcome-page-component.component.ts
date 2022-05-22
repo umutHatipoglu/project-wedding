@@ -48,12 +48,16 @@ export class WelcomePageComponentComponent implements OnInit {
   }
 
   navigate(){
-    console.log(this.password.value)
-    if(this.password.value === 'readyforaction' || this.password.value === 'hahaha'){
-      this.router.navigate(['main-page']);
+    if(this.password.value === 'readyforaction' ){
+      this.router.navigate(['main-page'],
+      { queryParams: { type: 'regular' } }
+      );
+    }else if(this.password.value === 'celebratewithus'){
+      this.router.navigate(['main-page'],
+      { queryParams: { type: 'inner-circle' } }
+      );
     }else{
       this.showError = true;
     }
   }
-
 }

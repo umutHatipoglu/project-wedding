@@ -8,6 +8,7 @@
         <div class="navbar-nav ms-auto mb-2 mb-lg-0">
           <a data-menuanchor="home" class="nav-link" aria-current="page" href="#home">Home</a>
           <a data-menuanchor="info" class="nav-link" routerLinkActive="active" href="#info">Info</a>
+          <a data-menuanchor="schedule" class="nav-link" routerLinkActive="active" href="#reservation">Schedule</a>
           <a data-menuanchor="reservation" class="nav-link" routerLinkActive="active" href="#reservation">Reservation</a>
           <a data-menuanchor="contact" class="nav-link" routerLinkActive="active" href="#contact" tabindex="-1" aria-disabled="true">Contact</a>
         </div>
@@ -26,6 +27,10 @@
           <h3><strong>14th May, 2023 | 4:00 PM</strong></h3>
       </div>
     </div>
+    <div class="section secondSection">
+      <app-schedule-page [isRegular]="isRegular$ |async"></app-schedule-page>
+  </div>
+    
     <div class="section secondSection">
         <h1>Reservation</h1>
     </div>

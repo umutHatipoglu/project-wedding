@@ -1,36 +1,31 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-page-component',
   templateUrl: './main-page-component.component.html',
   styleUrls: ['./main-page-component.component.scss']
 })
-export class MainPageComponentComponent implements OnInit {
+export class MainPageComponentComponent {
 
   @ViewChild('fullpageRef') fp_directive!: ElementRef;
   config;
   fullpage_api: any;
+  isRegular$: Observable<boolean> = this.route.queryParams.pipe(map((params)=> params['type'] === 'regular'));
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
     this.config = {
-      anchors: ['home', 'info', 'reservation', 'contact'],
+      anchors: ['home', 'info', 'schedule', 'reservation', 'contact'],
       menu: '#menu',
       navigation: true,
     };
   }
 
-  ngOnInit() {
-  }
+
 
   getRef(fullPageRef: any) {
     this.fullpage_api = fullPageRef;
   }
 
 }
-
-
-//reservation
-//isim soyisim 
-//comment
-//yemek tercihi
-//katilitp/katilmama

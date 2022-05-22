@@ -7,12 +7,14 @@ import { MainPageComponentComponent } from './main-page-component/main-page-comp
 import { WelcomePageComponentComponent } from './welcome-page-component/welcome-page-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SchedulePageComponent } from './schedule-page/schedule-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponentComponent,
-    WelcomePageComponentComponent
+    WelcomePageComponentComponent,
+    SchedulePageComponent
   ],
   imports: [
     BrowserModule,
