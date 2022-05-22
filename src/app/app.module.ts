@@ -8,6 +8,7 @@ import { WelcomePageComponentComponent } from './welcome-page-component/welcome-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SchedulePageComponent } from './schedule-page/schedule-page.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SchedulePageComponent } from './schedule-page/schedule-page.component';
     AppRoutingModule,
     AngularFullpageModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

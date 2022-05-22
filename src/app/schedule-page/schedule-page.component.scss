@@ -358,3 +358,11 @@
     display: flex;
     justify-content: center;
 }
+
+.icon{
+    color: #28a745;
+    margin-left: 4px;
+    &:hover{
+        cursor: pointer;
+    }
+}
