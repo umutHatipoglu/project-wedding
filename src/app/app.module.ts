@@ -11,6 +11,7 @@ import { NgbdModalContent, SchedulePageComponent } from './schedule-page/schedul
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RsvpPageComponent } from './rsvp-page/rsvp-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LocationPageComponent } from './location-page/location-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     WelcomePageComponentComponent,
     SchedulePageComponent,
     RsvpPageComponent,
-    NgbdModalContent
+    NgbdModalContent,
+    LocationPageComponent
   ],
   imports: [
     BrowserModule,

@@ -40,7 +40,18 @@
       </div>
     </div>
     <div class="section secondSection">
-      <h1>Location</h1>
+      <div class="containerLocation">
+        <div class="containerInner">
+          <div class="innerInner">
+            <p class="address">Louveterie 100, 4830 Limbourg, BE</p>
+            <app-location-page></app-location-page>
+          </div>
+          <img class="location-picture"
+     src="'../../../../assets/images/location.jpg"
+     alt="Wedding Location">
+        </div>
+      </div>
+      <app-location-page></app-location-page>
   </div>
     <div class="section secondSection">
       <app-schedule-page [isRegular]="isRegular$ |async"></app-schedule-page>
