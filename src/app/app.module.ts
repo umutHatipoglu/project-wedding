@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RsvpPageComponent } from './rsvp-page/rsvp-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LocationPageComponent } from './location-page/location-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LocationPageComponent } from './location-page/location-page.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
