@@ -7,7 +7,7 @@
     </div>
     <div *ngIf="onRemove" class="form-group ">
         <div class="login">
-            <input type="password" class="form-control loginInput" placeholder="Enter password" [formControl]="password">
+            <input type="password" class="form-control loginInput" placeholder="Enter password" [formControl]="password" (keydown.enter)="navigate()">
             <button class="btn btn-dark" (click)="navigate()">Enter</button>
         </div>
         <span *ngIf="showError" class="error">Please enter the correct password</span>
