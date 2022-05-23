@@ -43,7 +43,8 @@
     </div>
 
     
-    <button type="submit" class="btn btn-primary submitBtn" (click)="submit()">Submit</button>
+    <button type="submit" class="btn btn-primary submitBtn" (click)="submit()">  <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Submit</button>
   </form>
 
 <p *ngIf="!isFormVisible">Thank You For Letting Us Know</p>  

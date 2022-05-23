@@ -10,6 +10,7 @@ export class RsvpPageComponent implements OnInit {
   @Input() isRegular: boolean | null = false;
 
   isFormVisible = true;
+  isLoading = false;
 
   formGroup: FormGroup = this.formBuilder.group({});
 
@@ -43,11 +44,12 @@ export class RsvpPageComponent implements OnInit {
 
       formData.append("vegetarianNumber", this.formGroup.get("vegetarianNumber")?.value);
       formData.append("comment", this.formGroup.get("comment")?.value);
-
+      this.isLoading = true; 
       /* this.isLoading = true; // sending the post request async so it's in progress
       this.submitted = false; // hide the response message on multiple submits */
       this.http.post("https://script.google.com/macros/s/AKfycbznTfq4C4_suurPLBZSaPUt5tA34_XVMJnVS596LWIEPJdMma_fwj8_ypVGN08xSfYWBQ/exec", formData).subscribe(
         (response) => {
+          this.isLoading = false
           /* // choose the response message
           if (response["result"] == "success") {
             this.responseMessage = "Thanks for the message! I'll get back to you soon!";
@@ -61,6 +63,7 @@ export class RsvpPageComponent implements OnInit {
           console.log(response);
         },
         (error) => {
+          this.isLoading = false
           /* this.responseMessage = "Oops! An error occurred... Reload the page and try again.";
           this.form.enable(); // re enable the form after a success
           this.submitted = true; // show the response message
