@@ -1,0 +1,22 @@
+:host{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    text-align: left;
+}
+.firstSection{
+    display: flex;
+    .firstNameGroup{
+        margin-right: 8px
+    }
+}
+
+.checkout{
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.attendingSpan{
+    margin-right: 8px
+}

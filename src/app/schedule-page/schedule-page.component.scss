@@ -4,13 +4,53 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: black;
+    font-weight: 800 !important;
 }
 
-@media only screen and (min-width: 600px) {
-    .h4{
-       font-size: 8px !important;
-    }
-  }
+// Small devices (landscape phones, 576px and up)
+
+
+@media screen and (max-width: 400px) and (max-height: 700px) {
+        h4{
+          font-size: 11px !important;
+       }
+        p{
+          font-size: 10px !important;
+        };
+      .list-timeline{
+        padding: 0px !important
+      }
+      .mb-3{
+        margin-bottom: 0.5rem !important
+      }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px),
+       screen and (min-height: 700px) and (max-height: 900px)
+        {
+        h4{
+          font-size: 14px !important;
+       }
+        p{
+          font-size: 12px !important;
+        };
+       
+      .list-timeline{
+        padding: 2px !important
+      }
+      .mb-3{
+        margin-bottom: 1rem !important
+      }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+
+  .lastSection, .regular{
+    display: flex;
+    justify-content: center;
+}
+}
 
 .list-timeline {
   margin: 0;
@@ -354,10 +394,6 @@
   border-color: #2ECC71
 }
 
-.lastSection, .regular{
-    display: flex;
-    justify-content: center;
-}
 
 .icon{
     color: #28a745;

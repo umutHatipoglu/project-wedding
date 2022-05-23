@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto mb-2 mb-lg-0">
           <a data-menuanchor="home" class="nav-link" aria-current="page" href="#home">Home</a>
-          <a data-menuanchor="info" class="nav-link" routerLinkActive="active" href="#welcom">Welcome</a>
-          <a data-menuanchor="schedule" class="nav-link" routerLinkActive="active" href="#reservation">Schedule</a>
-          <a data-menuanchor="reservation" class="nav-link" routerLinkActive="active" href="#reservation">Reservation</a>
-          <a data-menuanchor="contact" class="nav-link" routerLinkActive="active" href="#contact" tabindex="-1" aria-disabled="true">Contact</a>
+          <a data-menuanchor="welcome" class="nav-link" aria-current="page" routerLinkActive="active" href="#welcome">Welcome</a>
+          <a data-menuanchor="location" class="nav-link" aria-current="page" routerLinkActive="active" href="#location" tabindex="-1" aria-disabled="true">Location</a>
+          <a data-menuanchor="schedule" class="nav-link" aria-current="page" routerLinkActive="active" href="#schedule">Schedule</a>
+          <a data-menuanchor="rsvp" class="nav-link" aria-current="page" routerLinkActive="active" href="#rsvp">RSVP</a>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
         <div class="card">
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p>Dear Family and Friends,<br><br>
+              <p class="welcomeText">Dear Family and Friends,<br><br>
                 This event will be an extended weekend with the close family, and a party on Saturday with everyone who we hope will have a continued impact on our lives.<br>
                 Please refer to the time schedule published here, which we will keep updating as the information becomes available. The paper trail of an international wedding is very long, as some of you already know.<br>
                 In any case, we would also like to request you to submit your RSVP here please.<br>
@@ -40,13 +40,13 @@
       </div>
     </div>
     <div class="section secondSection">
+      <h1>Location</h1>
+  </div>
+    <div class="section secondSection">
       <app-schedule-page [isRegular]="isRegular$ |async"></app-schedule-page>
   </div>
     
     <div class="section secondSection">
-        <h1>Reservation</h1>
-    </div>
-    <div class="section secondSection">
-        <h1>Contact</h1>
+        <app-rsvp-page></app-rsvp-page>
     </div>
   </div>

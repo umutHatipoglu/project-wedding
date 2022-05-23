@@ -74,6 +74,12 @@
     }
   }
 
+  @media only screen and (max-width: 768px) {
+   .welcomeText{
+     font-size: 12px;
+   }
+  }
+
   .headerLink{
     color: white;
   }

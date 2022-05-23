@@ -16,7 +16,7 @@ export class MainPageComponentComponent {
 
   constructor(private route: ActivatedRoute) {
     this.config = {
-      anchors: ['home', 'welcom', 'schedule', 'reservation', 'contact'],
+      anchors: ['home', 'welcome','location', 'schedule', 'rsvp'],
       menu: '#menu',
       navigation: true,
     };

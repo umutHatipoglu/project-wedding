@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SchedulePageComponent } from './schedule-page/schedule-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RsvpPageComponent } from './rsvp-page/rsvp-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponentComponent,
     WelcomePageComponentComponent,
-    SchedulePageComponent
+    SchedulePageComponent,
+    RsvpPageComponent
   ],
   imports: [
     BrowserModule,
