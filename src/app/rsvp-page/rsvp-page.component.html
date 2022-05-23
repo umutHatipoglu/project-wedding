@@ -1,26 +1,47 @@
-<form autocomplete="off"> 
+<form [formGroup]="formGroup" autocomplete="off"> 
     <div class="firstSection">
         <div class="form-group firstNameGroup">
             <label for="firstName">Name(s)</label>
-            <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="Name(s)">
+            <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="Name(s)" formControlName="name">
           </div>
     </div>
     <div class="checkout">
-        <span class="attendingSpan">Are you attending?</span>
+        <span class="attendingSpan"> I am / we are happy to be coming!</span>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+            <input class="form-check-input" type="radio"  id="exampleRadios1" [value]="true" formControlName="isComing">
             <label class="form-check-label" for="exampleRadios1">
               Yes
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <input class="form-check-input" type="radio"  id="exampleRadios2" [value]="false" formControlName="isComing">
             <label class="form-check-label" for="exampleRadios2">
               No
             </label>
           </div>
 
     </div>
+
+        <div class="form-group foodGroup" *ngIf="!isRegular && isComing">
+            <label for="food">Meal choice with # of people each</label>
+            <div class="food">
+                <label for="beef">Beef</label>
+                <input type="number" class="form-control foodInput" id="beef"  formControlName="beefNumber">
+            </div>
+            <div class="food">
+                <label for="fish">Fish</label>
+                <input type="number" class="form-control foodInput" id="fish" formControlName="fishNumber">
+            </div>
+            <div class="food">
+                <label for="vegetarian">Vegetarian</label>
+                <input type="number" class="form-control foodInput" id="vegetarian" formControlName="vegetarianNumber">
+            </div>
+          </div>
+    <div class="form-group comment">
+        <label for="food">Comment</label>
+        <textarea type="number" class="form-control" id="food"></textarea>
+    </div>
+
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary submitBtn">Submit</button>
   </form>

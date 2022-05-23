@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,17 +7,28 @@ import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./rsvp-page.component.scss']
 })
 export class RsvpPageComponent implements OnInit {
+  @Input() isRegular: boolean | null = false;
 
-  form: FormGroup = this.formBuilder.group({});
+  formGroup: FormGroup = this.formBuilder.group({});
 
   constructor(private formBuilder: FormBuilder) { }
 
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
+    this.formGroup = new FormGroup({
+      name: new FormControl(''),
+      isComing: new FormControl(''),
+      beefNumber: new FormControl(''),
+      fishNumber: new FormControl(''),
+      vegetarianNumber: new FormControl(''),
     });
+
+
+    this.formGroup.valueChanges.subscribe((value)=> console.log(value))
+  }
+
+  get isComing(){
+    return this.formGroup && this.formGroup.get('isComing')?.value;
   }
 
 }

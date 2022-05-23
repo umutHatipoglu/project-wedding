@@ -14,9 +14,23 @@
 .checkout{
     margin-top: 8px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .attendingSpan{
     margin-right: 8px
 }
+
+.submitBtn{
+    margin-top: 10px;
+    background-color: #272727 !important;
+    border-color: #272727  !important;
+}
+
+.foodInput{
+    width: 30%
+}
+.foodGroup{
+    margin-top:10px
+}
+

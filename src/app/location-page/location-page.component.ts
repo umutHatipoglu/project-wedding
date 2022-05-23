@@ -19,7 +19,6 @@ export class LocationPageComponent implements OnInit {
     })
 
     loader.load().then(() => {
-      console.log('loaded gmaps')
 
       const location = { lat: 50.5766956, lng: 	5.9186055 }
 
