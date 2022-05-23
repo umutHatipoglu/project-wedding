@@ -7,9 +7,10 @@ import { MainPageComponentComponent } from './main-page-component/main-page-comp
 import { WelcomePageComponentComponent } from './welcome-page-component/welcome-page-component.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SchedulePageComponent } from './schedule-page/schedule-page.component';
+import { NgbdModalContent, SchedulePageComponent } from './schedule-page/schedule-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RsvpPageComponent } from './rsvp-page/rsvp-page.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RsvpPageComponent } from './rsvp-page/rsvp-page.component';
     MainPageComponentComponent,
     WelcomePageComponentComponent,
     SchedulePageComponent,
-    RsvpPageComponent
+    RsvpPageComponent,
+    NgbdModalContent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { RsvpPageComponent } from './rsvp-page/rsvp-page.component';
     AngularFullpageModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
