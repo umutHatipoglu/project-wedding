@@ -1,20 +1,20 @@
 <form [formGroup]="formGroup" autocomplete="off" *ngIf="isFormVisible"> 
     <div class="firstSection">
-        <div class="form-group firstNameGroup">
-            <label for="firstName">Name(s)</label>
-            <input type="text" class="form-control" id="firstName" aria-describedby="emailHelp" placeholder="Name(s)" formControlName="name">
+        <div class="form-group firstNameGroup required" >
+            <label class="control-label" for="firstName">Name(s)</label>
+            <input type="text" class="form-control" [class.is-invalid]="(formGroup.get('name')?.touched || formGroup.get('name')?.dirty) && !formGroup.get('name')?.valid || (!formGroup.get('name')?.valid && isSubmitted)" id="firstName" placeholder="Name(s)" formControlName="name" required>
           </div>
     </div>
-    <div class="checkout">
-        <span class="attendingSpan"> I am / we are happy to be coming!</span>
+    <div class="checkout form-group required">
+        <label class="attendingSpan control-label"> I am / we are happy to be coming!</label>
         <div class="form-check">
-            <input class="form-check-input" type="radio"  id="exampleRadios1" [value]="true" formControlName="isComing">
+            <input class="form-check-input" type="radio"  id="exampleRadios1" [class.is-invalid]="(formGroup.get('isComing')?.touched || formGroup.get('isComing')?.dirty) && !formGroup.get('isComing')?.valid || (!formGroup.get('isComing')?.valid && isSubmitted)" [value]="true" formControlName="isComing" required>
             <label class="form-check-label" for="exampleRadios1">
               Yes
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio"  id="exampleRadios2" [value]="false" formControlName="isComing">
+            <input class="form-check-input" type="radio"  id="exampleRadios2" [class.is-invalid]="(formGroup.get('isComing')?.touched || formGroup.get('isComing')?.dirty) &&!formGroup.get('isComing')?.valid || (!formGroup.get('isComing')?.valid && isSubmitted)" [value]="false" formControlName="isComing" required>
             <label class="form-check-label" for="exampleRadios2">
               No
             </label>
@@ -45,6 +45,10 @@
     
     <button type="submit" class="btn btn-primary submitBtn" (click)="submit()">  <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         Submit</button>
+        <div *ngIf="isError" class="alert alert-danger" role="alert">
+            There was a problem. Please try again!
+           </div>
   </form>
 
 <p *ngIf="!isFormVisible">Thank You For Letting Us Know</p>  
+

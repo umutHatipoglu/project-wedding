@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-rsvp-page',
@@ -11,6 +11,8 @@ export class RsvpPageComponent implements OnInit {
 
   isFormVisible = true;
   isLoading = false;
+  isError = false;
+  isSubmitted = false;
 
   formGroup: FormGroup = this.formBuilder.group({});
 
@@ -19,8 +21,8 @@ export class RsvpPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
-      name: new FormControl(''),
-      isComing: new FormControl(''),
+      name: new FormControl('', Validators.required),
+      isComing: new FormControl('', Validators.required),
       beefNumber: new FormControl(''),
       fishNumber: new FormControl(''),
       vegetarianNumber: new FormControl(''),
@@ -36,6 +38,10 @@ export class RsvpPageComponent implements OnInit {
   }
 
   submit(){
+    if(!this.formGroup.valid){
+      this.isSubmitted = true;
+      return
+    }
       var formData: any = new FormData();
       formData.append("name", this.formGroup.get("name")?.value);
       formData.append("isComing", this.formGroup.get("isComing")?.value);
@@ -48,30 +54,14 @@ export class RsvpPageComponent implements OnInit {
       /* this.isLoading = true; // sending the post request async so it's in progress
       this.submitted = false; // hide the response message on multiple submits */
       this.http.post("https://script.google.com/macros/s/AKfycbznTfq4C4_suurPLBZSaPUt5tA34_XVMJnVS596LWIEPJdMma_fwj8_ypVGN08xSfYWBQ/exec", formData).subscribe(
-        (response) => {
-          this.isLoading = false
-          /* // choose the response message
-          if (response["result"] == "success") {
-            this.responseMessage = "Thanks for the message! I'll get back to you soon!";
-          } else {
-            this.responseMessage = "Oops! Something went wrong... Reload the page and try again.";
-          }
-          this.form.enable(); // re enable the form after a success
-          this.submitted = true; // show the response message
-          this.isLoading = false; // re enable the submit button */
+        () => {
+          this.isLoading = false;
           this.isFormVisible = false;
-          console.log(response);
         },
         (error) => {
           this.isLoading = false
-          /* this.responseMessage = "Oops! An error occurred... Reload the page and try again.";
-          this.form.enable(); // re enable the form after a success
-          this.submitted = true; // show the response message
-          this.isLoading = false; // re enable the submit button */
-          console.log(error);
+          this.isError = true
         }
       );
-    
   }
-
 }
