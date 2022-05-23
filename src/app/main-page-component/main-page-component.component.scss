@@ -98,9 +98,11 @@
   }
   .address{
     font-size: 30px;
+    text-decoration: none;
     color: black !important;
     &:active, &:hover {
     color: black !important;
+    text-decoration: underline;
     }
   }
 
